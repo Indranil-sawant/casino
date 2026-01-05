@@ -180,8 +180,10 @@ a {
 }
 
 .hero-title {
-    font-size: 4.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    /* Reduced from 4.5rem for longer text */
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
@@ -612,7 +614,8 @@ a {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        /* Reduced for longer slogan on mobile */
     }
 
     .hero-cta-group,
@@ -1529,4 +1532,33 @@ a {
     background: var(--gold);
     color: #000;
     transform: translateY(-3px);
+}
+
+/* =========================================
+   LOGO STYLING
+   ========================================= */
+.brand-logo-img {
+    height: 160px;
+    /* Increased for prominence */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-logo-img {
+    height: 220px;
+    /* Large footer logo as per reference */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .brand-logo-img {
+        height: 100px;
+    }
+
+    .footer-logo-img {
+        height: 140px;
+    }
 }
