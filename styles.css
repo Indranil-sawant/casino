@@ -187,7 +187,7 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 0.8rem;
     color: var(--text-sec);
     margin-bottom: 40px;
     display: flex;
@@ -585,6 +585,16 @@ a {
         text-align: center;
     }
 
+    .brand-logo-img {
+        margin: 0 auto 30px auto;
+    }
+
+    .brand-logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     .hero-subtitle {
         justify-content: center;
     }
@@ -616,6 +626,11 @@ a {
     .hero-title {
         font-size: 1.8rem;
         /* Reduced for longer slogan on mobile */
+    }
+
+    .hero-section {
+        padding-top: 20px;
+        /* Further reduced from 50px */
     }
 
     .hero-cta-group,
@@ -1556,9 +1571,114 @@ a {
 @media (max-width: 768px) {
     .brand-logo-img {
         height: 100px;
+        margin: 0 auto 10px auto;
+        /* Reduced from 20px to 10px on mobile */
     }
 
     .footer-logo-img {
         height: 140px;
     }
+}
+
+/* =========================================
+   NEW IMAGE INTEGRATIONS
+   ========================================= */
+
+/* Game Cards with Images */
+.game-card {
+    position: relative;
+    overflow: hidden;
+    /* Remove old padding if needed, but flex centered content needs it. 
+       Let's keep padding but ensure z-index puts text on top. */
+    z-index: 1;
+    border: 1px solid var(--glass-border);
+}
+
+.game-card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform 0.5s ease;
+    filter: brightness(0.4);
+    /* Darken format text readability */
+}
+
+/* Hover Effect */
+.game-card:hover .game-card-bg {
+    transform: scale(1.1);
+    filter: brightness(0.5);
+}
+
+.game-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Backgrounds */
+.bg-image-section {
+    position: relative;
+    background: url('casino-bg-3.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.bg-image-section-2 {
+    position: relative;
+    background: url('casino-bg-2.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.section-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    /* Heavy overlay for text readability */
+    z-index: 0;
+}
+
+/* Ensure content sits above overlay */
+.reasons-section .container,
+.offers-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInUpSimple {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-welcome {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+
+    opacity: 0;
+    animation: fadeInUpSimple 0.8s ease-out 0.2s forwards;
+}
+
+.hero-welcome::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 10px auto 0;
+    opacity: 0.8;
 }
