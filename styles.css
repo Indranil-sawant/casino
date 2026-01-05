@@ -385,18 +385,24 @@ a {
 }
 
 .offer-card {
-    background: rgba(46, 204, 113, 0.03);
-    border: 1px solid rgba(46, 204, 113, 0.15);
+    background: rgba(0, 0, 0, 0.7);
+    /* Darker background for readability */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    /* Gold border hint */
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-    transition: 0.3s;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    /* Glassmorphism blur */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .offer-card:hover {
-    background: rgba(46, 204, 113, 0.08);
+    background: rgba(0, 0, 0, 0.85);
     border-color: var(--gold);
-    transform: scale(1.02);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
 }
 
 .offer-amount {
@@ -1620,13 +1626,14 @@ a {
 /* Section Backgrounds */
 .bg-image-section {
     position: relative;
-    background: url('casino-bg-3.jpg') no-repeat center center/cover;
+    background: url('casino2.jpg') no-repeat center center/cover;
     background-attachment: fixed;
 }
 
 .bg-image-section-2 {
     position: relative;
-    background: url('casino-bg-2.jpg') no-repeat center center/cover;
+    background: url('casino2.jpg') no-repeat center center/cover;
+    /* Applied to both as requested */
     background-attachment: fixed;
 }
 
