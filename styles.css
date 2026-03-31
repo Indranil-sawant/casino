@@ -285,11 +285,247 @@ a {
     }
 }
 
+/* Hero Offer Card over Model */
+.hero-offer-card {
+    position: absolute;
+    left: -30px;
+    bottom: 110px;
+    max-width: 320px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: radial-gradient(circle at 0 0, rgba(46, 204, 113, 0.35), transparent 55%),
+        rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.8);
+    font-size: 0.85rem;
+}
+
+.hero-offer-card h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.hero-offer-card p {
+    color: var(--text-sec);
+    font-size: 0.8rem;
+}
+
+.hero-offer-label {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .hero-offer-card {
+        left: 10px;
+        right: 10px;
+        bottom: 80px;
+        max-width: none;
+    }
+}
+
 /* 2. Trust Strip */
 .trust-strip {
     background: #000;
     padding: 30px 0;
     border-bottom: 1px solid var(--glass-border);
+}
+
+/* Partners / Trusted By Section */
+.partners-section {
+    position: relative;
+    padding: 80px 0;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(46, 204, 113, 0.08), transparent 60%),
+        #050505;
+    overflow: hidden;
+}
+
+.partners-inner {
+    position: relative;
+    border-radius: 28px;
+    padding: 32px 28px 36px;
+    background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.06), transparent 55%),
+        rgba(7, 7, 7, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.partners-inner::before {
+    /* subtle noise / grain */
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
+    opacity: 0.7;
+}
+
+.partners-heading {
+    text-align: left;
+    max-width: 620px;
+    margin-bottom: 28px;
+}
+
+.partners-kicker {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--text-sec);
+    margin-bottom: 8px;
+}
+
+.partners-subtitle {
+    color: var(--text-sec);
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px 26px;
+    align-items: center;
+}
+
+.partner-card {
+    height: 70px;
+    border-radius: 18px;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 60%),
+        rgba(8, 8, 8, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    overflow: hidden;
+    will-change: transform, opacity;
+    transform: translateY(14px);
+    opacity: 0;
+    animation: partnerFadeIn 0.7s ease-out forwards;
+}
+
+.partner-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.partner-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.partner-card:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.partner-card:nth-child(4) {
+    animation-delay: 0.35s;
+}
+
+.partner-card:nth-child(5) {
+    animation-delay: 0.45s;
+}
+
+.partner-card:nth-child(6) {
+    animation-delay: 0.55s;
+}
+
+.partner-card:nth-child(7) {
+    animation-delay: 0.65s;
+}
+
+.partner-card:hover {
+    transform: translateY(4px) scale(1.05);
+    border-color: rgba(255, 215, 0, 0.7);
+    box-shadow: 0 18px 45px rgba(255, 215, 0, 0.25);
+    background: radial-gradient(circle at top left, rgba(255, 215, 0, 0.16), transparent 60%),
+        rgba(8, 8, 8, 0.96);
+}
+
+.partner-logo {
+    max-height: 40px;
+    width: auto;
+    opacity: 0.95;
+    transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+}
+
+.partner-card:hover .partner-logo {
+    filter: brightness(1.05) contrast(1.05) drop-shadow(0 0 12px rgba(255, 215, 0, 0.5));
+    opacity: 1;
+    transform: translateY(-1px) scale(1.02);
+}
+
+@keyframes partnerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.partners-divider {
+    height: 1px;
+    width: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);
+    opacity: 0.45;
+}
+
+.partners-divider.top {
+    margin-bottom: 24px;
+}
+
+.partners-divider.bottom {
+    margin-top: 28px;
+}
+
+@media (max-width: 992px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .partner-card {
+        height: 64px;
+    }
+}
+
+@media (max-width: 600px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+
+    .partners-inner {
+        padding: 24px 20px 26px;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partners-heading {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .partner-card {
+        height: 60px;
+    }
 }
 
 .trust-grid {
@@ -426,6 +662,73 @@ a {
     font-size: 0.8rem;
     color: var(--text-sec);
     opacity: 0.6;
+}
+
+/* Bottom Offer Banner */
+.bottom-offer-section {
+    padding: 60px 0 40px;
+    background: #050505;
+    border-top: 1px solid var(--glass-border);
+}
+
+.bottom-offer-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 24px 28px;
+    border-radius: 24px;
+    background: radial-gradient(circle at 0% 0%, rgba(46, 204, 113, 0.35), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 215, 0, 0.3), transparent 55%),
+        #050505;
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+    flex-wrap: wrap;
+}
+
+.bottom-offer-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.bottom-offer-text p {
+    color: var(--text-sec);
+    font-size: 0.95rem;
+}
+
+.bottom-offer-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--gold);
+}
+
+.bottom-offer-btn {
+    min-width: 220px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .bottom-offer-banner {
+        flex-direction: column;
+        text-align: center;
+        align-items: flex-start;
+    }
+
+    .bottom-offer-text {
+        width: 100%;
+    }
+
+    .bottom-offer-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* 5. Steps Section */
