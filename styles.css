@@ -461,6 +461,11 @@ a {
     transform: translateZ(0);
 }
 
+.partner-logo--win365 {
+    max-height: 48px;
+    transform: translateZ(0) scale(1.04);
+}
+
 .partner-card:hover .partner-logo {
     filter: brightness(1.05) contrast(1.05) drop-shadow(0 0 12px rgba(255, 215, 0, 0.5));
     opacity: 1;
@@ -1870,8 +1875,8 @@ a {
 }
 
 .footer-logo-img {
-    height: 220px;
-    /* Large footer logo as per reference */
+    height: 260px;
+    /* Slightly larger footer logo */
     width: auto;
     object-fit: contain;
     margin-bottom: 20px;
@@ -1885,7 +1890,7 @@ a {
     }
 
     .footer-logo-img {
-        height: 140px;
+        height: 170px;
     }
 }
 
